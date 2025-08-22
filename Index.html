@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Poder do Arquétipo - Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Página Inicial -->
+        <div id="intro-page" class="page active">
+            <div class="container">
+                <div class="text-center mb-12">
+                    <h1 class="title">O Poder do Arquétipo</h1>
+                    <h2 class="subtitle">
+                        O Guia Definitivo para a Empreendedora Construir uma Marca de Autoridade e Confiança
+                    </h2>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">A Descoberta – O Quiz da Sua Assinatura de Poder</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="instructions">
+                            <h4>Instruções:</h4>
+                            <p class="mb-4">
+                                "Bem-vinda à sua jornada de autoconhecimento. As 20 perguntas a seguir são um espelho de como você age, 
+                                pensa e sente no seu universo profissional."
+                            </p>
+                            <p class="mb-4">
+                                "Para cada uma, escolha a alternativa que mais ressoa com você, mesmo que outras também façam sentido. 
+                                A mágica será revelada no final!"
+                            </p>
+                        </div>
+
+                        <div class="text-center">
+                            <button id="start-quiz" class="btn btn-primary">Iniciar Quiz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Página do Quiz -->
+        <div id="quiz-page" class="page">
+            <div class="container">
+                <div class="quiz-header">
+                    <div class="flex justify-between">
+                        <h1 class="quiz-title">O Poder do Arquétipo</h1>
+                        <span id="question-counter" class="question-counter">Pergunta 1 de 20</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progress" class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 id="question-text" class="question-text"></h3>
+                    </div>
+                    <div class="card-content">
+                        <div id="options-container" class="options-container"></div>
+
+                        <div class="navigation">
+                            <button id="prev-btn" class="btn btn-outline">Anterior</button>
+                            <button id="next-btn" class="btn btn-primary">Próxima</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Página de Resultado -->
+        <div id="result-page" class="page">
+            <div class="container">
+                <div class="text-center mb-8">
+                    <h1 class="result-title">Sua Fórmula de Poder</h1>
+                    <p class="result-subtitle">Descubra seu arquétipo dominante e construa sua marca pessoal</p>
+                </div>
+
+                <div class="results-grid">
+                    <div class="card">
+                        <div class="card-header primary-header">
+                            <div id="primary-icon" class="archetype-icon">💡</div>
+                            <h3>Seu Arquétipo Primário</h3>
+                            <p id="primary-name" class="archetype-name"></p>
+                            <p id="primary-score" class="archetype-score"></p>
+                        </div>
+                        <div class="card-content">
+                            <p id="primary-description" class="archetype-description"></p>
+                            <div class="archetype-detail">
+                                <h4>Sua autoridade vem de:</h4>
+                                <p id="primary-authority"></p>
+                            </div>
+                            <div class="archetype-detail">
+                                <h4>Ponto de atenção:</h4>
+                                <p id="primary-shadow"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header secondary-header">
+                            <div id="secondary-icon" class="archetype-icon">❤️</div>
+                            <h3>Seu Arquétipo de Apoio</h3>
+                            <p id="secondary-name" class="archetype-name"></p>
+                            <p id="secondary-score" class="archetype-score"></p>
+                        </div>
+                        <div class="card-content">
+                            <p id="secondary-description" class="archetype-description"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Próximos Passos</h3>
+                    </div>
+                    <div class="card-content text-center">
+                        <p class="next-steps-text">
+                            "Descobrir seu arquétipo é o primeiro e mais importante passo. Agora, como traduzir essa essência em uma imagem 
+                            que comunica autoridade, atrai os clientes certos e te permite cobrar o preço que você merece?"
+                        </p>
+                        <button id="email-btn" class="btn btn-primary">Receber Resultado Completo por Email</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Email -->
+        <div id="email-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Receber Resultado por Email</h3>
+                    <button id="close-modal" class="close-btn">&times;</button>
+                </div>
+                <form id="email-form">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">Enviar Resultado</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Toast de sucesso -->
+        <div id="toast" class="toast">
+            <p id="toast-message"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+style.css
